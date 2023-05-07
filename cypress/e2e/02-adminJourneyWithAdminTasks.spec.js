@@ -9,12 +9,12 @@ describe('Admin journey: Various administrative tasks', () => {
             cy.adminLogin(email, password)
           })
     })
-    // it('Check dashboard elements', () => {
-    //     cy.checkDashboardElements()
-    // })
-    // it('Check Shipment location with different filters', () => {
-    //     cy.checkShippingInfo()
-    // })
+    it('Check dashboard elements', () => {
+        cy.checkDashboardElements()
+    })
+    it('Check Shipment location with different filters', () => {
+        cy.checkShippingInfo()
+    })
     it('Check and add Customer information', () => {
         cy.checkUserInfo()
     })
