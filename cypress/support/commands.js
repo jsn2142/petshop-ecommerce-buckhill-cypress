@@ -37,6 +37,9 @@ var footerPaginatorCounter = '.mr-10'
 var customerInfoHeader = ".text-h5"
 var addNewCustButton = '.table-header__content > .v-btn'
 var addNewCustHeader = "div[class='d-flex justify-space-between mb-5'] p[class='text-h5']"
+
+var productsNavBar = ":nth-child(4) > :nth-child(1) > a > .v-list-item > .v-list-item__content > .v-list-item-title"
+var productPageHeader = ".text-h5"
 Cypress.Commands.add('visitHomePage', () => {
     cy.visit(baseUrl)
 })
@@ -157,5 +160,5 @@ Cypress.Commands.add('checkUserInfo', () => {
         cy.get(addNewCustHeader).should('be.visible')
         addNewCust(firstName, lastName, email, phone, address, password)
     })
-
+Cypress.Commands.add('')
 })

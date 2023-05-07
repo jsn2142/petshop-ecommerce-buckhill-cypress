@@ -1,5 +1,3 @@
 node_modules/
 reports/
 screenshots/
-cypress/e2e/02-adminJourneyWithAdminTasks.spec.js
-cypress/support/addNewCustByAdmin.js
