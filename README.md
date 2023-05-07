@@ -3,13 +3,14 @@
 <div align="center">
   <h3 align="center">Cypress Automation Script of PetShop eCommerce Application</h3>
   <p align="center">
-    A cypress project with various implementation of in automation!
+    A cypress project with various implementations of automation!
     <br />
     <a href="https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/tree/master/cypress/e2e"><strong>Checkout the test scripts with test case documentation »</strong></a>
     <br />
     <br />
-    ·
-    <a href="">Bug Report</a>
+    <a href=""><strong>Bug Report »</strong></a>
+    <br />
+    <br />
   </p>
 </div>
 This repository contains automated test scripts for testing a web application called Petshop using the Cypress testing framework. This contains 2 test scripts, one is the User Journey, another is the Admin Journey. Test case documentation for both the tests are available in the e2e folder. Also, a bug report can be found in here.
@@ -37,4 +38,4 @@ This repository contains automated test scripts for testing a web application ca
    ```sh
    npx cypress run --e2e
    ```
-### Congratulations 🚀 Now you have successfully set up the repository on your computer!
+### Congratulations 🎉 Now you have successfully set up the repository on your computer! 🚀 
