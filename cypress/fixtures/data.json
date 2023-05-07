@@ -1,0 +1,34 @@
+{
+    "user01": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "janedoe@example.com",
+      "address": "ABCStreet",
+      "password": "userpassword",
+      "phoneNumber": "01221122",
+      "city": "xyzCity",
+      "state": "ABCState",
+      "country": "UK",
+      "postal": "4521"
+    },
+    "user02": {
+      "firstName": "Credence",
+      "lastName": "Barebone",
+      "email": "credence@example.com",
+      "address": "XYZStreet",
+      "password": "userpassword",
+      "phoneNumber": "01221122",
+      "city": "xyzCity",
+      "state": "ABCState",
+      "country": "UK",
+      "postal": "4521"
+    },
+    "productTitles": {
+      "product01": "Fresh Wave Odor Removing Gel",
+      "product02": "Purina Tidy Cats Clumping Cat Litter"
+    },
+    "admin": {
+      "email": "admin@buckhill.co.uk",
+      "password": "admin"
+    }
+}
