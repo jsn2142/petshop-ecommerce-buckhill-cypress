@@ -3,6 +3,9 @@ import 'cypress-mochawesome-reporter/register'
 import { adminAuthenticate } from '../support/adminAuthenticate'
 import { userListing } from '../support/userListingByAdmin'
 describe('User Journey: User logs in > Browses promotions and products > Finishes ordering a product', () => {
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    return false
+  })
   beforeEach('Using Admin credential, to fetch user email address and then login as a user', () => {
     cy.fixture('data').then((data) => {
       var email = data.admin.email

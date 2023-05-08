@@ -16,7 +16,7 @@ function listAllProducts() {
             "origin": "https://pet-shop.buckhill.com.hr"
         }
     }).then((res) => {
-        var productTitle = res.body.data[0].title
+        var productTitle = res.body.data[1].title
         return cy.wrap(productTitle).as('productTitle')
     })
 }
