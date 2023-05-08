@@ -8,6 +8,7 @@ import { adminLogin } from './adminLogin'
 import { adminAuthenticate } from './adminAuthenticate'
 import { userListing } from './userListingByAdmin'
 import { addNewCust } from './addNewCustByAdmin'
+import { searchProducts } from './searchProduct'
 const env = Cypress.env('production') // Change the value to switch to other environments, if available.
 var baseUrl = env['baseUrl']
 // Selectors
@@ -34,12 +35,11 @@ var todayChip = '.location__table-filter > :nth-child(4)'
 var monthlyChip = '.location__table-filter > :nth-child(5)'
 var yearlyChip = '.location__table-filter > :nth-child(6)'
 var footerPaginatorCounter = '.mr-10'
+var customerNavBar = ':nth-child(3) > :nth-child(1) > a > .v-list-item'
 var customerInfoHeader = ".text-h5"
-var addNewCustButton = '.table-header__content > .v-btn'
+var addNewCustButton = '.table-header__content > .v-btn > .v-btn__content'
 var addNewCustHeader = "div[class='d-flex justify-space-between mb-5'] p[class='text-h5']"
 
-var productsNavBar = ":nth-child(4) > :nth-child(1) > a > .v-list-item > .v-list-item__content > .v-list-item-title"
-var productPageHeader = ".text-h5"
 Cypress.Commands.add('visitHomePage', () => {
     cy.visit(baseUrl)
 })
@@ -114,6 +114,7 @@ Cypress.Commands.add('adminLogin', (email, password) => {
 Cypress.Commands.add('visitAdminLoginPage', () => {
     var url = baseUrl + '/login'
     cy.visit(url)
+    cy.get('.text-h5').should('be.visible')
 })
 Cypress.Commands.add('checkDashboardElements', () => {
     cy.get(dashTotalEarning).should('be.visible')
@@ -121,6 +122,7 @@ Cypress.Commands.add('checkDashboardElements', () => {
     cy.get(dashPotentialEarning).should('be.visible')
 })
 Cypress.Commands.add('checkShippingInfo', () => {
+    cy.get(shipmentLocNavBar).should('be.visible')
     cy.get(shipmentLocNavBar).click()
     cy.get(shipmentLocHeader).should('be.visible')
     cy.get(todayChip).click()
@@ -134,7 +136,8 @@ Cypress.Commands.add('checkShippingInfo', () => {
     cy.get(footerPaginatorCounter).should('include.text', '5')
 })
 Cypress.Commands.add('checkUserInfo', () => {
-    cy.get(':nth-child(3) > :nth-child(1) > a > .v-list-item > .v-list-item__content > .v-list-item-title').click()
+    cy.get(customerNavBar).should('be.visible')
+    cy.get(customerNavBar).click()
     cy.get(customerInfoHeader).should('be.visible')
     cy.fixture('data').then((data) => {
         var email = data.admin.email
@@ -143,12 +146,17 @@ Cypress.Commands.add('checkUserInfo', () => {
             cy.get('@accessToken').then((accessToken) => {
                 userListing(accessToken).then(() => {
                     cy.get('@email').then((email) => {
+                        cy.get('tbody').should('be.visible')
                         cy.get('tbody').should('include.text', email)
+                        cy.wait(2000)
                     })
                 })
             })
         })
     })
+    cy.get(addNewCustButton).should('be.visible')
+    cy.get(addNewCustButton).click()
+    cy.get(addNewCustHeader).should('be.visible')
     cy.fixture('data').then((data) => {
         var firstName = data.user01.firstName
         var lastName = data.user01.lastName
@@ -156,9 +164,11 @@ Cypress.Commands.add('checkUserInfo', () => {
         var address = data.user01.address
         var phone = data.user01.phoneNumber
         var password = data.user01.password
-        cy.get(addNewCustButton).click()
-        cy.get(addNewCustHeader).should('be.visible')
         addNewCust(firstName, lastName, email, phone, address, password)
+        cy.wait(2000)
+        cy.get(customerInfoHeader).should('be.visible')
     })
-Cypress.Commands.add('')
+})
+Cypress.Commands.add('searchProduct', () => {
+    searchProducts()
 })

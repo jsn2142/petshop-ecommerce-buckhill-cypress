@@ -10,8 +10,11 @@ function adminAuthenticate(email, password) {
         // to handle fail cases as well
         failOnStatusCode: false,
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded",
+            'accept': '*/*',
+            'X-CSRF-TOKEN': ''
         },
+        form: true,
         body: {
             "email": email,
             "password": password
@@ -21,7 +24,7 @@ function adminAuthenticate(email, password) {
         if (responseStatus === 200) {
             var accessToken = res.body.data.token
         }
-        return cy.wrap(accessToken, {log: false}).as('accessToken').then(() => {
+        return cy.wrap(accessToken, { log: false }).as('accessToken').then(() => {
             return cy.wrap(responseStatus).as('responseStatus')
         })
     })
