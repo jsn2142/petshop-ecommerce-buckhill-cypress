@@ -1,6 +1,6 @@
 // --- Created by Jesan Rahman ---
 
-describe('Admin journey: Shipping Information', () => {
+describe('Admin journey: Dashboard Information', () => {
     it('Admin Login', () => {
         cy.visitAdminLoginPage()
         cy.fixture('data').then((data) => {
