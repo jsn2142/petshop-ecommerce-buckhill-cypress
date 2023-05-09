@@ -5,3 +5,4 @@ cypress/e2e/03-AdminJourneyCustomerInfo.spec.js
 cypress/e2e/04-AdminJourneyProductInfo.spec.js
 cypress/e2e/05-AdminJourneyShippingInfo.spec.js
 videos/
+cypress/e2e/02-adminJourneyAdminTasks.spec.js

@@ -25,6 +25,7 @@ var placeOrderButton = ".action-btns > .v-btn > .v-btn__content"
 var shippingAdrEditButton = "div[class='mt-8'] span[class='v-btn__content']"
 var proceedToCheckOut = ".v-btn--elevated"
 var psNextButton = "button[class='v-btn v-btn--flat v-theme--PetGreen v-btn--density-default v-btn--size-default v-btn--variant-elevated primary500 text-white ml-5'] span[class='v-btn__content']"
+var userLogoutButton = '.ml-6 > .v-btn__content'
 
 var dashTotalEarning = ":nth-child(2) > .v-card > .v-card-item > .v-card-item__content > .v-card-title > .d-flex > .title__text"
 var dashOrdersThisMon = ':nth-child(3) > .v-card > .v-card-item > .v-card-item__content > .v-card-title > .d-flex > .title__text'
@@ -43,9 +44,18 @@ var addNewCustHeader = "div[class='d-flex justify-space-between mb-5'] p[class='
 Cypress.Commands.add('visitHomePage', () => {
     cy.visit(baseUrl)
 })
-Cypress.Commands.add('userLogin', (email, password) => {
+Cypress.Commands.add('userLogin', (adminEmail, adminPassword, userPassword) => {
     cy.visit(baseUrl)
-    login(email, password)
+    adminAuthenticate(adminEmail, adminPassword).then(() => {
+        cy.get('@accessToken').then((accessToken) => {
+            userListing(accessToken).then(() => {
+                cy.get('@email').then((email) => {
+                    login(email, userPassword)
+                })
+            })
+        })
+    })
+    // login(email, password)
 })
 Cypress.Commands.add('userSignUp', (firstName, lastName, email, password, phoneNumber, address) => {
     cy.visit(baseUrl)
@@ -171,4 +181,9 @@ Cypress.Commands.add('checkUserInfo', () => {
 })
 Cypress.Commands.add('searchProduct', () => {
     searchProducts()
+})
+Cypress.Commands.add('userLogout', () => {
+    cy.wait(1000)
+    cy.get(userLogoutButton).should('be.visible')
+    cy.get(userLogoutButton).click()
 })

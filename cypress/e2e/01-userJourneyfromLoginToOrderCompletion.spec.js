@@ -8,18 +8,10 @@ describe('User Journey: User logs in > Browses promotions and products > Finishe
   })
   beforeEach('Using Admin credential, to fetch user email address and then login as a user', () => {
     cy.fixture('data').then((data) => {
-      var email = data.admin.email
-      var password = data.admin.password
+      var adminEmail = data.admin.email
+      var adminPassword = data.admin.password
       var userPassword = data.user01.password
-      adminAuthenticate(email, password).then(() => {
-        cy.get('@accessToken').then((accessToken) => {
-          userListing(accessToken).then(() => {
-            cy.get('@email').then((email) => {
-              cy.userLogin(email, userPassword)
-            })
-          })
-        })
-      })
+      cy.userLogin(adminEmail, adminPassword, userPassword)
     })
   })
 
@@ -49,5 +41,8 @@ describe('User Journey: User logs in > Browses promotions and products > Finishe
       cy.wait(3000)
       cy.screenshot('Screenshot spec 01')
     })
+  })
+  afterEach('Logout after all the tests are done', () => {
+    cy.userLogout()
   })
 })
