@@ -1,6 +1,6 @@
 // --- Created by Jesan Rahman ---
 
-describe('Admin journey: Dashboard Information > Check Shipping information', () => {
+describe('Admin journey: Dashboard Information > Check Shipping information > Check Customers page', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
     })
@@ -17,5 +17,8 @@ describe('Admin journey: Dashboard Information > Check Shipping information', ()
     })
     it('Check Shipment location with different filters', () => {
         cy.checkShippingInfo()
+    })
+    it('Check and Add Customer information', () => {
+        cy.checkUserInfo()
     })
 })
