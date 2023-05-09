@@ -1,10 +1,10 @@
 // --- Created by Jesan Rahman ---
 
-describe('Admin journey: Dashboard Information', () => {
+describe('Admin journey: Dashboard Information > Check Shipping information', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
     })
-    it('Admin Login', () => {
+    beforeEach('Admin Login', () => {
         cy.visitAdminLoginPage()
         cy.fixture('data').then((data) => {
             var email = data.admin.email
@@ -14,5 +14,8 @@ describe('Admin journey: Dashboard Information', () => {
     })
     it('Check dashboard elements', () => {
         cy.checkDashboardElements()
+    })
+    it('Check Shipment location with different filters', () => {
+        cy.checkShippingInfo()
     })
 })
