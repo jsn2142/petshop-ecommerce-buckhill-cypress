@@ -164,6 +164,9 @@ Cypress.Commands.add('checkUserInfo', () => {
             })
         })
     })
+    
+})
+Cypress.Commands.add('addUserInfo', () => {
     cy.get(addNewCustButton).should('be.visible')
     cy.get(addNewCustButton).click()
     cy.get(addNewCustHeader).should('be.visible')
@@ -174,7 +177,7 @@ Cypress.Commands.add('checkUserInfo', () => {
         var address = data.user01.address
         var phone = data.user01.phoneNumber
         var password = data.user01.password
-        addNewCust(firstName, lastName, email, phone, address, password)
+        addNewCust(firstName, lastName, phone, address, password)
         cy.wait(2000)
         cy.get(customerInfoHeader).should('be.visible')
     })

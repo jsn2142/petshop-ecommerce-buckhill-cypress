@@ -4,7 +4,7 @@ describe('Admin journey: Dashboard Information > Check Shipping information > Ch
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false
     })
-    beforeEach('Admin Login', () => {
+    it('Admin Login', () => {
         cy.visitAdminLoginPage()
         cy.fixture('data').then((data) => {
             var email = data.admin.email
@@ -20,5 +20,8 @@ describe('Admin journey: Dashboard Information > Check Shipping information > Ch
     })
     it('Check and Add Customer information', () => {
         cy.checkUserInfo()
+    })
+    it('Add a new Customer information', () => {
+        cy.addUserInfo()
     })
 })
