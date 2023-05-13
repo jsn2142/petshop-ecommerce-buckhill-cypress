@@ -1,4 +1,4 @@
-# Test Scenarios and Test Cases of the User Journey 
+# Test Scenarios and Test Cases of the User Journey 📜
 ### Test Scenario
 
 1. Check system response with valid user credentials to login to the application
