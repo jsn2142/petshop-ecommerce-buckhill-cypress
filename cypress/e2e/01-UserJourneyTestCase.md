@@ -1,7 +1,7 @@
 # Test Scenarios and Test Cases of the User Journey 
 ### Test Scenario
 
-1. Check system response with valid credentials to login to the application
+1. Check system response with valid user credentials to login to the application
 2. Check system response when promotions are being checked in the homepage
 3. Check whether the products can be browsed in the homepage
 4. Check if a specific product can be searched and can be added to cart
