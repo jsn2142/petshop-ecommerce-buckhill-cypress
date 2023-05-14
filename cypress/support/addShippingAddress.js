@@ -2,10 +2,10 @@
 var checkBox = ".v-selection-control > .v-label"
 var checkBox02 = ".shipping-details > .v-row > :nth-child(9) > .v-input > .v-input__control > .v-selection-control > .v-label"
 var nextButton = ".action-btns > .v-btn > .v-btn__content"
-var checkOutheaderText = ".primary500--text"
+var checkoutHeaderText = ".primary500--text"
 
 function addShippingAddress(firstName, lastName, address, city, state, postal, country) {
-    cy.get(checkOutheaderText).should('include.text', 'Checkout')
+    cy.get(checkoutHeaderText).should('include.text', 'Checkout')
     cy.get('input').eq(0)
                    .clear().type(firstName)
     cy.get('input').eq(1)
