@@ -8,7 +8,7 @@
     <a href="https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/tree/master/cypress/e2e"><strong>Checkout the test scripts with test case documentation »</strong></a>
     <br />
     <br />
-    <a href=""><strong>Bug Report »</strong></a>
+    <a href="https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/blob/master/cypress/bugs/qa-1123.md"><strong>Bug Report »</strong></a>
     <br />
     <br />
   </p>
