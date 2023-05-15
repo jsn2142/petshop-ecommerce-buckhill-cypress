@@ -1,7 +1,5 @@
 // --- Created by Jesan Rahman ---
 import 'cypress-mochawesome-reporter/register'
-import { adminAuthenticate } from '../support/adminAuthenticate'
-import { userListing } from '../support/userListingByAdmin'
 describe('User Journey: User logs in > Browses promotions and products > Finishes ordering a product', () => {
   Cypress.on('uncaught:exception', (err, runnable) => {
     return false
