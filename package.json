@@ -3,6 +3,24 @@
     "cypress": "^12.7.0"
   },
   "devDependencies": {
+    "cypress": "^12.7.0",
     "cypress-mochawesome-reporter": "^3.4.0"
-  }
+  },
+  "name": "petshop-ecommerce-buckhill-cypress",
+  "description": "<!-- PROJECT LOGO -->\r <br />\r <div align=\"center\">\r   <h3 align=\"center\">Cypress Automation Script of PetShop eCommerce Application</h3>\r   <p align=\"center\">\r     A cypress project with various implementations of automation!\r     <br />\r     <a href=\"https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/tree/master/cypress/e2e\"><strong>Checkout the test scripts with test case documentation »</strong></a>\r     <br />\r     <br />\r     <a href=\"https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/blob/master/cypress/bugs/qa-1123.md\"><strong>Bug Report »</strong></a>\r     <br />\r     <br />\r   </p>\r </div>\r This repository contains automated test scripts for testing a web application called Petshop using the Cypress testing framework. This contains 2 test scripts, one is the User Journey, another is the Admin Journey. Test case documentation for both the tests are available in the e2e folder. Also, a bug report can be found in here.",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress.git"
+  },
+  "author": "Jesan Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress/issues"
+  },
+  "homepage": "https://github.com/jsn2142/petshop-ecommerce-buckhill-cypress#readme"
 }
