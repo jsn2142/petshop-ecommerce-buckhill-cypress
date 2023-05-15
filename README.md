@@ -23,7 +23,7 @@ This repository contains automated test scripts for testing a web application ca
    ```
 2. Install Cypress in the repo directory in the local machine
    ```sh
-   npm install cypress --save-dev
+   npm install cypress@12.7.0 --save-dev
    ``` 
 3. Install Cypress reporter, using Terminal install cypress-mochawesome-reporter, with command
    ```sh
@@ -37,5 +37,25 @@ This repository contains automated test scripts for testing a web application ca
 6. To run in Headless mode, and to generate Mochaawesome reports of all the specs and video recording of all of them
    ```sh
    npx cypress run --e2e
+   ```
+7. To run in Docker, download Docker application from <a href="https://www.docker.com/" target="_blank">Docker website</a>, then install it.
+
+8. To build the docker image(keep the docker app running in the background), run this command: 
+   ```sh
+   docker build -t petshop-cypress:1.0.0 .
+   ```
+9. To run the tests using the docker image(keep the docker app running in the background), run this command: 
+   
+   for Powershell:
+   ```sh
+   docker run --rm -it -v ${PWD}:/e2e petshop-cypress:1.0.0
+   ```
+   for CMD:
+   ```sh
+   docker run --rm -it -v ${pwd}:/e2e petshop-cypress:1.0.0
+   ```
+   for Git Bash:
+   ```sh
+   docker run --rm -it -v %cd%:/e2e petshop-cypress:1.0.0
    ```
 ### Congratulations 🎉 Now you have successfully set up the repository on your computer! 🚀 
