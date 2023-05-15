@@ -28,7 +28,7 @@ function addShippingAddress(firstName, lastName, address, city, state, postal, c
         } else {
             cy.get(checkBox02).click()
         }
-      });
+      })
     cy.get(nextButton).should('be.visible')
     cy.get(nextButton).click()
 }

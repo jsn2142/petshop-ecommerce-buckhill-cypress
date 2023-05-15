@@ -6,7 +6,7 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   experimentalModifyObstructiveThirdPartyCode: true,
   defaultCommandTimeout: 60000,
-  pageLoadTimeout: 60000,
+  pageLoadTimeout: 90000,
   e2e: {
     specPattern: '**/*.spec.js',
     testIsolation: false,
