@@ -38,7 +38,7 @@ This repository contains automated test scripts for testing a web application ca
    ```sh
    npx cypress run --e2e
    ```
-7. To run in Docker, download Docker application from <a href="https://www.docker.com/" target="_blank">Docker website</a>, then install it.
+7. To run in <strong>Docker</strong> 🐳, download Docker application from <a href="https://www.docker.com/" target="_blank">Docker website</a>, then install it.
 
 8. To build the docker image(keep the docker app running in the background), run this command: 
    ```sh
